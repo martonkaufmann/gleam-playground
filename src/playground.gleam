@@ -116,6 +116,15 @@ pub fn main() {
   //   io.debug(-1%3)
   //   io.debug(0 % 3)
   //   io.debug(int.max(0, -3))
+    let phrase = "the quick brown fox jumps over the lazy dog"
+    let t =   phrase
+    |> string.replace("-", "")
+    |> string.replace(" ", "")
+    |> string.lowercase 
+    |> fn(x) {
+      x == x |> string.split("") |> list.unique |> string.join("")
+    }
   io.debug(sum([3, 0], 4))
     io.debug(list.concat([[1, 2, 3, 6], [4, 5, 6]]))
+    io.debug(t)
 }
